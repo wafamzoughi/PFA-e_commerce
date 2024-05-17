@@ -32,7 +32,7 @@ const LoginSignUp = () => {
      if (responseData.role === 'admin') {
         window.location.href = 'http://localhost:5173';
     } else {
-        window.location.href = 'http://localhost:3000';
+        window.location.href = 'http://localhost:3000/Boutique';
     }
             //redirectToAppropriatePage(responseData.role);
         } else {

@@ -15,7 +15,8 @@ function App() {
       <BrowserRouter>
       <Navbar/>
       <Routes>
-        <Route path='/' element={<Boutique />}/>
+        <Route path='/' element={<LoginSignUp/>} />
+        <Route path='/Boutique' element={<Boutique />}/>
         <Route path='/bijoux' 
         element={
           <>
@@ -39,7 +40,7 @@ function App() {
           <Route path=':produitId' element={<Produit/>}/>
         </Route>
         <Route path='/panier' element={<Panier/>}/>
-        <Route path='/login' element={<LoginSignUp/>} />
+        
       </Routes>
       <Footer/>
       </BrowserRouter>
