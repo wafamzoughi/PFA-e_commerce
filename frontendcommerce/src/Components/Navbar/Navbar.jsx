@@ -24,7 +24,7 @@ const Navbar = () => {
                 <li onClick={()=>{setMenu("bijoux")}}><Link style={{textDecoration : 'none'}} to='/bijoux'>Bijoux</Link>{menu==="bijoux"?<hr/>:<Link></Link>}
                     <ul className="sub-menu">
                         <li onClick={()=>{setMenu("bracelet")}}><Link style={{textDecoration : 'none'}}to='/bracelet'>Bracelet</Link>{menu==="bracelet"?<hr/>:<Link></Link>}</li>
-                        <li onClick={()=>{setMenu("collier")}}><ink style={{textDecoration : 'none'}}to='/collier'>Collier</ink>{menu==="collier"?<hr/>:<Link></Link>}</li>
+                        <li onClick={()=>{setMenu("collier")}}><Link style={{textDecoration : 'none'}}to='/collier'>Collier</Link>{menu==="collier"?<hr/>:<Link></Link>}</li>
                         <li onClick={()=>{setMenu("bague")}}><Link style={{textDecoration : 'none'}}to='/bague'>Bague</Link>{menu==="bague"?<hr/>:<Link></Link>}</li>
                         <li onClick={()=>{setMenu("boucle")}}><Link style={{textDecoration : 'none'}}to='/boucle'>Boucle</Link>{menu==="boucle"?<hr/>:<Link></Link>}</li>
                     </ul>

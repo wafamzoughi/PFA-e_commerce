@@ -16,10 +16,10 @@ const ArticlesPanier = () => {
             <p>Spprimer</p>
             </div>
             <hr/>
-           {all_product.map((e)=>{
+           {all_product.map((e , index)=>{
             if(articlesPanier[e.id]>0)
             {
-                return ( <div>
+                return ( <div key={index}>
                 <div className="articlesPanier-format articlesPanier-format-main">
                     <img src={e.image} alt="" className="iconpanier-produit-icon" />
                     <p>{e.name}</p>

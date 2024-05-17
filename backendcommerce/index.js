@@ -261,18 +261,37 @@ async function signIn(email, password) {
 }
 // Middleware pour protéger les routes
 const fetchUser = async (req, res, next) => {
-    const token = req.session.token; // Récupérer le token de la session
+    const token = req.header("auth-token"); // Récupérer le token de la session
     if (!token) {
-        return res.status(401).send({ errors: "Please authenticate using a valid token" });
+         res.status(401).send({ errors: "Please authenticate using a valid token" });
     }
-    try {
+    else {
+      try {
         const data = jwt.verify(token, 'secret_ecom');
         req.utilisateur = data; // Assigner les données du token à req.utilisateur
         next();
     } catch (error) {
-        res.status(401).send({ errors: "Please authenticate using a valid token" });
-    }
+        res.status(401).send({ errors: "Please authenticate using a valid token tow " });
+    }}
+
 };
+//fetch user
+// const fetchUser= async(req,res,next)=>{
+//     const token = req.header('auth-token');
+//     if(!token){
+//         res.status(401).send({errors:"Please authenticate using valid token"})
+
+//     }
+//     else{
+//         try{
+//             const data= jwt.verify(token,'secret_ecom');
+//             req.utilisateur=data.utilisateur;
+//             next();
+//         }catch(error){
+//             res.status(401).send({errors:"Please authenticate using valid token"})
+//         }
+//         }
+//     }
 
 // Exemple d'utilisation du middleware
 app.get('/protected-route', fetchUser, (req, res) => {
@@ -302,7 +321,7 @@ app.post('/ajouteraupanier',fetchUser,async(req,res)=>{
     let userData = await Utilisateurs.findOne({_id:req.utilisateur.id});
     userData.cartData[req.body.articleId]+=1;
     await Utilisateurs.findByIdAndUpdate({_id:req.utilisateur.id},{cartData:userData.cartData})
-    res.send("Added")
+    res.json({message :"Added"})
 })
 
 //supp les produits du panier
@@ -313,7 +332,7 @@ app.post('/supprimerdupanier', fetchUser, async (req, res) => {
     if (userData.cartData[req.body.articleId] > 0) 
         userData.cartData[req.body.articleId] -= 1;
         await Utilisateurs.findByIdAndUpdate({ _id: req.utilisateur.id }, { cartData: userData.cartData });
-        res.send("Removed");
+        res.json( {message:"Removed"});
     
 });
 // get les données du panier 
