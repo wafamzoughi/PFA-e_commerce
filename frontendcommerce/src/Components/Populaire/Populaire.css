@@ -1,0 +1,24 @@
+.populaire{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    height: 90vh;
+    margin-top: 40px;
+}
+.populaire h1{
+    color: black;
+    font-size: 50px;
+    font-weight: 600;
+}
+.populaire hr{
+    width: 200px;
+    height: 6px;
+    border-radius: 10px;
+    background-color: rgb(31, 30, 30);
+}
+.populaire-article{
+    margin-top: 50px;
+    display: flex;
+    gap: 30px;
+}

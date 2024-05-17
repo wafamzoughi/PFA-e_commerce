@@ -1,0 +1,20 @@
+
+.boutiquecatégorie-produits{
+    margin: 50px ;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    row-gap: 60px;
+}
+.boutiquecatégorie-chargerplus{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 150px auto;
+    width: 230px;
+    height: 70px;
+    border-radius: 75px;
+    background-color:rgb(243, 242, 238);
+    color:gray;
+    font-size: 20px;
+    font-weight: 500;
+}

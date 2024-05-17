@@ -1,0 +1,30 @@
+.navbar{
+    display: flex;
+    padding: 15px 30px;
+    
+    background-color:rgb(210, 188, 157);
+}
+.logo{
+    width: 80px;
+    height: 80px;
+}
+.nav-logo{
+    margin-left: 20px;
+    height: 80px;
+    
+}
+@media(max-width: 800px){
+    .navbar{
+    padding: 15px 30px;
+    }
+    
+    .logo{
+    width: 60px;
+    height: 60px;
+    }
+    
+    .nav-logo{
+    width: 60px;
+    height: 60px;
+    }
+}

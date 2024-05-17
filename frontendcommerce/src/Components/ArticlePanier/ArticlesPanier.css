@@ -1,0 +1,102 @@
+.articlepanier{
+    margin: 100px 170px;
+}
+.articlepanier hr{
+    height: 3px;
+    background-color: rgb(118, 118, 118);
+    border: 0;
+}
+.articlesPanier-format-main{
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 1fr 1fr 1fr 1fr;
+    align-items: center;
+    gap: 75px;
+    padding: 20px 0px;
+    color: rgb(91, 89, 89);
+    font-size: 20px;
+    font-weight: 600;
+}
+.articlesPanier-format{
+    font-size: 16px;
+    font-weight: 500;
+}
+.iconpanier-produit-icon{
+    width:80px; 
+    height:80px;
+}
+.articlesPanier-remove-icon{
+    width:15px ;
+    margin: 0px 40px;
+    cursor: pointer;
+}
+.articlesPanier-quantité{
+    width: 65px;
+    height: 50px;
+    border: 2px solid rgb(203, 201, 201);
+    background-color: white;
+}
+.articlesPanier-bas{
+    display: flex;
+    margin: 100px 0px;
+}
+.articlesPanier-total{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-right: 200px;
+    gap: 40px;
+}
+.articlesPanier-total-article{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0px;
+}
+.articlesPanier-total button{
+    width: 262px;
+    height: 58px;
+    outline: none;
+    border: none;
+    background-color: rgb(156, 59, 59);
+    color: rgb(210, 209, 209);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+
+}
+.articlesPanier-codepromo{
+    flex: 1;
+    font-size: 16px;
+    font-weight: 500;
+
+}
+.articlesPanier-codepromo p{
+    color: rgb(106, 106, 106);
+
+}
+.articlesPanier-promobox{
+    width: 400px;
+    margin-top: 15px;
+    padding-left: 20px;
+    height: 60px;
+    background-color: rgb(237, 232, 232);
+
+}
+.articlesPanier-promobox input{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 16px;
+    width: 245px;
+    height: 50px;
+    
+}
+.articlesPanier-promobox button{
+    width: 150px;
+    height: 60px;
+    font-size: 16px;
+    background: black;
+    color: white;
+    cursor: pointer;
+}
+
+

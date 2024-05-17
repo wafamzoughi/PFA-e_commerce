@@ -1,0 +1,51 @@
+.offre{
+    width: 65%;
+    height: 60vh;
+    display: flex;
+    margin: auto;
+    padding: 0px 140px;
+    margin-bottom: 150px;
+    background: linear-gradient(180deg, white, rgb(233, 228, 212) 60%);
+}
+.offre_gauche{
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.offre_gauche h1{
+    color: black;
+    font-size: 80px;
+    font-weight: 600;
+}
+.offre_gauche p{
+    color: #000;
+    font-size: 20px;
+    font-weight: 600;
+
+}
+.offre_gauche button{
+    width: 300px;
+    height: 70px;
+    border-radius: 30px;
+    background-color: brown;
+    border: none;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 30px;
+    cursor: pointer;
+}
+.offre_droite{
+    flex:1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.offre_gauche h2{
+    color: rgb(65, 64, 64);
+    font-size: 40px;
+    font-weight: 600;
+    padding-top: 30px;
+}
+
