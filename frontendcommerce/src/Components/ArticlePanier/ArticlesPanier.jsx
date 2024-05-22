@@ -51,7 +51,7 @@ const ArticlesPanier = () => {
                             <h3>{getMontantTotalPanier()+8}DT</h3>
                         </div>
                     </div>
-                    <button>COMMANDER</button>
+                    <button>Passer à la caisse</button>
                 </div>
                 <div className="articlesPanier-codepromo">
                     <p>Si vous avez un code promo, entrez-le ici</p>

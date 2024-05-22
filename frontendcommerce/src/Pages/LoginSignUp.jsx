@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import './CSS/LoginSignUp.css'
+
 const LoginSignUp = () => {
     const [state,setstate]=useState("Se connecter");
     const [formData,setformData]= useState({
@@ -75,7 +76,9 @@ const LoginSignUp = () => {
                 <div className="loginsignup-form">
                     {state==="S'inscrire"?<input name='username' value={formData.username} onChange={gestionnaireChangements} type="text" placeholder="Votre Nom"/>:<></>}
                     <input type="email" name='email' value={formData.email} onChange={gestionnaireChangements} placeholder="Votre Email"/>
-                    <input type="password" name='password' value={formData.password} onChange={gestionnaireChangements} placeholder="Votre Mot de Passe"/>
+                    <div><input type="password" name='password' value={formData.password} onChange={gestionnaireChangements} placeholder="Votre Mot de Passe"/>
+                    
+                    </div>
                 </div>
                 <button onClick={()=>{state==="Se connecter"?connecter():inscrire()}}>Continue</button>
                 {state==="S'inscrire"?<p className="loginsignup-login">Vous avez déjà un compte ? <span onClick={()=>{setstate("Se connecter")}}>Connectez-vous ici</span></p>

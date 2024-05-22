@@ -38,7 +38,8 @@ const ListeProduit = () => {
             <div className="listeproduit-touslesproduits">
                 <hr/>
                 {touslesproduits.map((produit,index)=>{
-                    return <><div key={index} className="listeproduit-format-main listeproduit-format">
+                    return <div>
+                        <div key={index} className="listeproduit-format-main listeproduit-format">
                         <img src={produit.image} alt="" className="listeproduit-produit-icon" />
                         <p>{produit.name}</p>
                         <p>{produit.old_price}DT</p>
@@ -47,7 +48,7 @@ const ListeProduit = () => {
                         <img onClick={()=>{supp_produit(produit.id)}} src={supp_icon} alt="" className="listeproduit-supp-icon"/>
                     </div>
                     <hr/>
-                    </>
+                    </div>
                 })}
             </div>
         </div>

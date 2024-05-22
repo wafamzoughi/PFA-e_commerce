@@ -16,16 +16,17 @@ function App() {
       <Navbar/>
       <Routes>
         <Route path='/' element={<LoginSignUp/>} />
+        <Route path='/login' element={<LoginSignUp/>} />
         <Route path='/Boutique' element={<Boutique />}/>
         <Route path='/bijoux' 
         element={
-          <>
+          <li>
             <BoutiqueCatégorie  category="colliers" />
             <BoutiqueCatégorie category="bracelets" />
             <BoutiqueCatégorie category="bagues" />
             <BoutiqueCatégorie category="boucles" />
             
-          </>
+          </li>
         }
         />
         <Route path='/bracelet' element={<BoutiqueCatégorie  category="bracelets"/>}/>

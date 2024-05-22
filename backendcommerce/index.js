@@ -128,6 +128,8 @@ app.get('/touslesproduits',async(req,res)=>{
     res.send(produits);
 
 })
+
+
 const session = require('express-session');
 
 app.use(session({
@@ -159,6 +161,12 @@ const Utilisateurs = mongoose.model('utilisateurs',{
 
 
 
+})
+//Creating API for getting all products
+app.get('/touslesusers',async(req,res)=>{
+    let utilisateurs = await Utilisateurs.find({});
+    console.log("All Utilisateurs Fetched");
+    res.send(utilisateurs);
 })
 const Admins = mongoose.model('admins',{
     name:{
@@ -275,23 +283,7 @@ const fetchUser = async (req, res, next) => {
     }}
 
 };
-//fetch user
-// const fetchUser= async(req,res,next)=>{
-//     const token = req.header('auth-token');
-//     if(!token){
-//         res.status(401).send({errors:"Please authenticate using valid token"})
 
-//     }
-//     else{
-//         try{
-//             const data= jwt.verify(token,'secret_ecom');
-//             req.utilisateur=data.utilisateur;
-//             next();
-//         }catch(error){
-//             res.status(401).send({errors:"Please authenticate using valid token"})
-//         }
-//         }
-//     }
 
 // Exemple d'utilisation du middleware
 app.get('/protected-route', fetchUser, (req, res) => {

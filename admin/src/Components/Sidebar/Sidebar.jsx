@@ -3,6 +3,7 @@ import './Sidebar.css';
 import{Link} from 'react-router-dom';
 import ajouter_produit_panier from '../../assets/Panier_produit.svg';
 import liste_produit from '../../assets/liste_produit.svg';
+import users from'../../assets/users.png';
 const Sidebar = () => {
     return(
         <div className="sidebar">
@@ -16,6 +17,12 @@ const Sidebar = () => {
                 <div className="sidebar-item">
                     <img src={liste_produit} alt=""/>
                     <p>Liste de Produit</p>
+                </div>
+            </Link>
+            <Link to={'/listeusers'} style={{textDecoration:"none"}}>
+                <div className="sidebar-item">
+                    <img src={users} alt="" width="35" />
+                    <p>Liste de utilisateurs</p>
                 </div>
             </Link>
         </div>
