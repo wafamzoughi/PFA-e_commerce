@@ -6,10 +6,14 @@
     margin: 20px 30px;
     border-radius: 6px;
     background:white;
+    
+}
+h1{
+    text-align: center;
 }
 .ajouterproduit-champarticle{
     width: 100%;
-    color: grey;
+    color: rgb(76, 75, 75);
     font-size: 18px;
 }
 .ajouterproduit-champarticle input{
@@ -20,7 +24,7 @@
     padding-left: 15px;
     border: 1px solid #c3C3C3;
     outline: none;
-    color: #7b7b7b;
+    color: #626161;
     font-family: 'Times New Roman', Times, serif;
     font-size: 15px;
 }
@@ -33,7 +37,7 @@
     width: 100px;
     height: 50px;
     font-size: 14px;
-    color:#7b7b7b;
+    color:#737373;
     border: 1px solid #7b7b7b8b; 
     border-radius:4px ;
 

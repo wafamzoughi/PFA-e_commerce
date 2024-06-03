@@ -16,8 +16,11 @@
     border-radius: 10px;
     background-color: rgb(77, 75, 75);
 }
-.produitsimilaire-article{
+.produitsimilaire-produit{
     margin-top: 50px;
     display: flex;
     gap: 30px;
+    grid-template-columns: 1fr 1fr 1fr 1fr ;
+    
+    
 }

@@ -128,6 +128,17 @@ app.get('/touslesproduits',async(req,res)=>{
     res.send(produits);
 
 })
+// Endpoint pour récupérer des produits similaires
+app.get('/produits-similaires', async (req, res) => {
+    try {
+        // Récupérez une liste de produits aléatoires ou similaires
+        const produitsSimilaires = await Produit.aggregate([{ $sample: { size: 4 } }]);// Par exemple, limitez la liste à 5 produits
+        res.json(produitsSimilaires);
+    } catch (error) {
+        console.error("Erreur lors de la récupération des produits similaires :", error);
+        res.status(500).json({ error: "Une erreur s'est produite lors de la récupération des produits similaires." });
+    }
+});
 
 
 const session = require('express-session');
@@ -252,21 +263,7 @@ app.post('/signin', async (req, res) => {
         }
     }
 });
-// Exemple de gestion de la redirection côté client en JavaScript
-async function signIn(email, password) {
-    const response = await fetch('http://localhost:4000/signin', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password })
-    });
-    const data = await response.json();
-    if (data.success) {
-        localStorage.setItem('token', data.token); // Sauvegarde du token dans le stockage local
-        window.location.href = data.redirectUrl; // Redirection en fonction de l'URL renvoyée
-    } else {
-        alert(data.errors);
-    }
-}
+
 // Middleware pour protéger les routes
 const fetchUser = async (req, res, next) => {
     const token = req.header("auth-token"); // Récupérer le token de la session
@@ -313,10 +310,9 @@ app.post('/ajouteraupanier',fetchUser,async(req,res)=>{
     let userData = await Utilisateurs.findOne({_id:req.utilisateur.id});
     userData.cartData[req.body.articleId]+=1;
     await Utilisateurs.findByIdAndUpdate({_id:req.utilisateur.id},{cartData:userData.cartData})
-    res.json({message :"Added"})
+    res.send("Added")
 })
 
-//supp les produits du panier
 //supp les produits du panier
 app.post('/supprimerdupanier', fetchUser, async (req, res) => {
     console.log("removed", req.body.articleId);
@@ -324,7 +320,7 @@ app.post('/supprimerdupanier', fetchUser, async (req, res) => {
     if (userData.cartData[req.body.articleId] > 0) 
         userData.cartData[req.body.articleId] -= 1;
         await Utilisateurs.findByIdAndUpdate({ _id: req.utilisateur.id }, { cartData: userData.cartData });
-        res.json( {message:"Removed"});
+        res.send("Removed");
     
 });
 // get les données du panier 
@@ -333,6 +329,7 @@ app.post('/getpanier', fetchUser, async (req, res) => {
     let userData = await Utilisateurs.findOne({ _id: req.utilisateur.id });
     res.json(userData.cartData);
 })
+
 
 app.listen(port,(error)=>{
     if (!error){

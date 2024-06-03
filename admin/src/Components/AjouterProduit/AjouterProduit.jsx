@@ -52,7 +52,9 @@ const AjouterProduit = () => {
         }
     }
     return(
+
         <div className="ajouter-produit">
+            <h1>Ajouter des Produits</h1>
             <div className="ajouterproduit-champarticle">
                 <p>Titre de Produit</p>
                 <input value={detailsProduit.name} onChange={gestionnaireChangements} type="text" name="name" placeholder="Ecrire ici.."/>
@@ -68,6 +70,7 @@ const AjouterProduit = () => {
                 </div>
             </div>
             <div className="ajouterproduit-champarticle">
+            
                 <p>Catégorie de produit</p>
                 <select value={detailsProduit.category} onChange={gestionnaireChangements} name="category" className="ajouter-produit-selecteur">
                     <option value="colliers">Collier</option>
