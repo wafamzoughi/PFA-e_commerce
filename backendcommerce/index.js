@@ -329,8 +329,48 @@ app.post('/getpanier', fetchUser, async (req, res) => {
     let userData = await Utilisateurs.findOne({ _id: req.utilisateur.id });
     res.json(userData.cartData);
 })
+// Define the Order schema and model
+const orderSchema = new mongoose.Schema({
+  nom: String,
+  prenom: String,
+  email: String,
+  tel: String,
+  address: String,
+  region: String,
+  products: Array,
+  total: Number,
+});
 
+const Order = mongoose.model('Order', orderSchema);
 
+// API endpoint to handle order submission
+app.post('/orders', async (req, res) => {
+  const { nom, prenom, email, tel, address, region, products, total } = req.body;
+
+  const newOrder = new Order({
+    nom,
+    prenom,
+    email,
+    tel,
+    address,
+    region,
+    products,
+    total,
+  });
+
+  try {
+    await newOrder.save();
+    res.status(201).send('Order placed successfully');
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Failed to place order');
+  }
+});
+app.get('/touslescommandes',async(req,res)=>{
+    let orders = await Order.find({});
+    console.log("All orders Fetched");
+    res.send(orders);
+})
 app.listen(port,(error)=>{
     if (!error){
         console.log("Server Running on Port "+port)

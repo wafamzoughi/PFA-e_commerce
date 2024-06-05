@@ -8,6 +8,7 @@ import Produit from './Pages/Produit.jsx';
 import BoutiqueCatégorie from './Pages/BoutiqueCatégorie.jsx';
 import Boutique from './Pages/Boutique.jsx';
 import Footer from './Components/Footer/Footer.jsx';
+import PasserCaisse from './Components/PasserCaisse/PasserCaisse.jsx';
 
 function App() {
   return (
@@ -37,11 +38,12 @@ function App() {
         <Route path='/cheveux' element={<BoutiqueCatégorie category="cheveux"/>}/>
         <Route path='/montre' element={<BoutiqueCatégorie category="montres"/>}/>
         <Route path='/telephone' element={<BoutiqueCatégorie category="telephones"/>}/>
+
         <Route path="/produit" element={<Produit/>}>
           <Route path=':produitId' element={<Produit/>}/>
         </Route>
         <Route path='/panier' element={<Panier/>}/>
-        
+         <Route path="/PasserCaisse" element={<PasserCaisse />} />
       </Routes>
       <Footer/>
       </BrowserRouter>

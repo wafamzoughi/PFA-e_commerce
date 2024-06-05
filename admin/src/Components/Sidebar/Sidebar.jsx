@@ -25,6 +25,12 @@ const Sidebar = () => {
                     <p>Liste de utilisateurs</p>
                 </div>
             </Link>
+            <Link to={'/listecommandes'} style={{textDecoration:"none"}}>
+                <div className="sidebar-item">
+                    <img src={users} alt="" width="35" />
+                    <p>Liste de commandes</p>
+                </div>
+            </Link>
         </div>
     )
 }

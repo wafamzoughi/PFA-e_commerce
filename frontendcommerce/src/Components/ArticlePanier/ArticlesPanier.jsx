@@ -1,10 +1,16 @@
 import React from "react";
 import './ArticlesPanier.css'
 import { useContext } from "react";
+import { useNavigate } from 'react-router-dom';
 import { BoutiqueContext } from "../../Contexte/BoutiqueContext";
 import supp_icon from '../Assets/panier-supp.png'
 const ArticlesPanier = () => {
     const{getMontantTotalPanier,all_product,articlesPanier,supprimerDuPanier}= useContext(BoutiqueContext);
+    const navigate = useNavigate();
+
+    const PasserCaisse = () => {
+        navigate('/PasserCaisse');
+    };
     return(
         <div className="articlepanier">
             <div className=" articlesPanier-format-main ">
@@ -51,7 +57,7 @@ const ArticlesPanier = () => {
                             <h3>{getMontantTotalPanier()+8}DT</h3>
                         </div>
                     </div>
-                    <button>Passer à la caisse</button>
+                    <button  onClick={PasserCaisse}>Passer à la caisse</button>
                 </div>
                 <div className="articlesPanier-codepromo">
                     <p>Si vous avez un code promo, entrez-le ici</p>
