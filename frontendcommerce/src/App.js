@@ -10,10 +10,11 @@ import Boutique from './Pages/Boutique.jsx';
 import Footer from './Components/Footer/Footer.jsx';
 import PasserCaisse from './Components/PasserCaisse/PasserCaisse.jsx';
 
+
 function App() {
   return (
     <div>
-      <BrowserRouter>
+            <BrowserRouter>
       <Navbar/>
       <Routes>
         <Route path='/' element={<LoginSignUp/>} />
@@ -47,6 +48,9 @@ function App() {
       </Routes>
       <Footer/>
       </BrowserRouter>
+
+      
+
     </div>
   );
 }

@@ -49,7 +49,7 @@
 .articlesPanier-total-article{
     display: flex;
     justify-content: space-between;
-    padding: 15px 0px;
+    padding: 5px 0px;
 }
 .articlesPanier-total button{
     width: 262px;

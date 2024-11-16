@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import './ListeUsers.css';
+import supp_icon from '../../assets/supp_icon.png'
 const ListeUsers = () => {
     const [touslesusers, settouslesusers]=useState([]);
     const recupererInfo=async()=>{
@@ -18,6 +19,7 @@ const ListeUsers = () => {
                 <p>Nom</p>
                 <p>Email</p>
                 <p>Mot de passe</p>
+                <p>Supprimer</p>
             </div>
             <div className="listeusers-touslesusers">
                 <hr/>
@@ -27,6 +29,7 @@ const ListeUsers = () => {
                         <p>{utilisateur.name}</p>
                         <p>{utilisateur.email}</p>
                         <p>{utilisateur.password}</p>
+                        <img onClick={()=>{supp_user(utilisateur.id)}} src={supp_icon} alt="" className="listeproduit-supp-icon"/>
                     </div>
                     <hr/>
                     </>

@@ -21,6 +21,9 @@ const PasserCaisse = () => {
     });
   };
 
+
+
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 

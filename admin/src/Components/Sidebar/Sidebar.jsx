@@ -4,6 +4,7 @@ import{Link} from 'react-router-dom';
 import ajouter_produit_panier from '../../assets/Panier_produit.svg';
 import liste_produit from '../../assets/liste_produit.svg';
 import users from'../../assets/users.png';
+import listecommande from '../../assets/listecommande.png';
 const Sidebar = () => {
     return(
         <div className="sidebar">
@@ -27,7 +28,7 @@ const Sidebar = () => {
             </Link>
             <Link to={'/listecommandes'} style={{textDecoration:"none"}}>
                 <div className="sidebar-item">
-                    <img src={users} alt="" width="35" />
+                    <img src={listecommande} alt="" width="35" />
                     <p>Liste de commandes</p>
                 </div>
             </Link>

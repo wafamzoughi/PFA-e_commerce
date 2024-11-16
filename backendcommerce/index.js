@@ -9,7 +9,7 @@ const cors = require('cors');
 const { error } = require("console");
 const { type } = require('os');
 app.use(express.json());
-app.use(cors());
+app.use(cors()); 
 //Data base connection with MongoDB
 // Définir la connexion à la base de données MongoDB
 mongoose.connect('mongodb://127.0.0.1:27017/e-commerce');
